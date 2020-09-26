@@ -38,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'djangobower',
     'django.contrib.staticfiles',
-    'schedule',
     'widget_tweaks',
 ]
 
@@ -74,18 +72,8 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_CONTEXT_PROCESSOR= [
-    "django.template.context_processors.request"
-]
-
 WSGI_APPLICATION = 'demo_register.wsgi.application'
 
-#Static files
-STATICFILE_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
-]
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -130,18 +118,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-#Static root
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
-BOWER_COMPONENTS_ROOT = os.path.join(os.path.abspath(__file__), '/components/')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-BOWER_INSTALLED_APPS = (
-    'jquery',
-    'jquery-ui',
-    'bootstrap'
-)
