@@ -8,7 +8,7 @@ from .models import User
 
 def register(request):
     return render(request, '../templates/register.html')
-
+    
 class customer_register(CreateView):
     model = User
     form_class = CustomerSignUpForm
@@ -17,7 +17,7 @@ class customer_register(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('/')
+        return render(self.request, '../templates/doctor.html')
 
 class employee_register(CreateView):
     model = User
@@ -27,7 +27,7 @@ class employee_register(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('/')
+        return render(self.request, '../templates/doctor.html')
 
 
 def login_request(request):
@@ -39,7 +39,7 @@ def login_request(request):
             user = authenticate(username=username, password=password)
             if user is not None :
                 login(request,user)
-                return redirect('/')
+                return render(request, '../templates/doctor.html')
             else:
                 messages.error(request,"Invalid username or password")
         else:
