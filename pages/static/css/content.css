@@ -1,3 +1,12 @@
 a.navbar-brand.js-scroll-trigger {
     color: black;
 }
+
+img#logo {
+    width: 60%;
+    height: auto;
+}
+
+h1#title {
+    color: black;
+}

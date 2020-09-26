@@ -40,11 +40,13 @@
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
                     <!-- <h1 class="mx-auto my-0 text-uppercase">ADU</h1> -->
-                    <img src="{% static 'assets/img/earth.svg' %}" />
+                    <img id="logo" src="{% static 'assets/img/earth.svg' %}" />
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">Looking for help in time of need</h2>
                     <!--This is where you change the registration and the login-->
-                    <a class="btn btn-primary js-scroll-trigger" href="{% url 'register' %}">Register</a>
-                    <a class="btn btn-primary js-scroll-trigger" href="{% url 'login' %}">Login</a>
+                    <a class="btn btn-primary js-scroll-trigger" href="{% url 'customer_register' %}">I am a Doctor</a>
+                    <a class="btn btn-primary js-scroll-trigger" href="{% url 'employee_register' %}">I am a Volunteer</a>
+                    <br>
+                    <a href="{% url 'login' %}">Login</a>
                 </div>
             </div>
         </header>
