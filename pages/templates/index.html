@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">ADU</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Healthicate</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -29,8 +29,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#mission">Our Mission</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#FAQs">FAQS</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="mx-auto text-center">
                     <!-- <h1 class="mx-auto my-0 text-uppercase">ADU</h1> -->
                     <img id="logo" src="{% static 'assets/img/earth.svg' %}" />
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Looking for help in time of need</h2>
+                    <h2 class="mx-auto mt-2 mb-5">Breaking the health education barriers</h2>
                     <!--This is where you change the registration and the login-->
                     <a class="btn btn-primary js-scroll-trigger" href="{% url 'customer_register' %}">I am a Doctor</a>
                     <a class="btn btn-primary js-scroll-trigger" href="{% url 'employee_register' %}">I am a Volunteer</a>
@@ -51,9 +51,55 @@
             </div>
         </header>
         <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 id="h2-about">About</h2>
+                        <p id="about-p">
+                          Healthicate is a FREE, online doctor-2-volunteer video-scheduling platform that provides personalized health assistance to volunteers in developing nations.
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Projects-->
-        <!-- Signup-->
-        <!-- Contact-->
+        <section class="projects-section text-center" id="mission">
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class=" mb-4">Our mission</h2>
+                    <p>
+                        Healthicate's mission is to break the barriers in health education by connecting doctors and volunteers in developed and developing nations.
+                    </p>
+                </div>
+            </div>
+            <img class="img-fluid" src="assets/img/ipad.png" alt="" />
+        </div>
+        </section>
+        <!-- FAQs-->
+        <section class="projects-section bg-light text-center" id="FAQs">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="mb-4">FAQs</h2>
+                <button class="accordion">Section 1</button>
+                <div class="panel">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                
+                <button class="accordion">Section 2</button>
+                <div class="panel">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                
+                <button class="accordion">Section 3</button>
+                <div class="panel">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+        </section>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright Adu</div></footer>
         <!-- Bootstrap core JS-->
@@ -62,6 +108,22 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src=" 'js/scripts.js'"></script>
+        <script>
+          var acc = document.getElementsByClassName("accordion");
+          var i;
+          
+          for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var panel = this.nextElementSibling;
+              if (panel.style.display === "block") {
+                panel.style.display = "none";
+              } else {
+                panel.style.display = "block";
+              }
+            });
+          }
+          </script>
     </body>
 </html>
