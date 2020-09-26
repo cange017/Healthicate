@@ -7,6 +7,16 @@ img#logo {
     height: auto;
 }
 
+img#logo-small {
+    width: 30%;
+    height: auto;
+    margin-right: -20%;
+}
+
+a#logo-title {
+    margin-left: -5em; 
+}
+
 h1#title {
     color: black;
 }
@@ -27,6 +37,10 @@ a.nav-link.js-scroll-trigger:hover {
     color: black;
 }
 
+div#login-form {
+    margin-top: 10em;
+}
+
 /* Track */
 
 ::-webkit-scrollbar-track {
@@ -38,14 +52,14 @@ a.nav-link.js-scroll-trigger:hover {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: black;
+    background: #64a19d;
 }
 
 
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: gray;
+    background: #c0d8d7;
 }
 
 /*************** FAQ Section begins*******************/

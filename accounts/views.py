@@ -6,6 +6,9 @@ from .form import CustomerSignUpForm, EmployeeSignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from .models import User
 
+def index(request):
+    return render(request, '../templates/index.html')
+
 def register(request):
     return render(request, '../templates/register.html')
     
