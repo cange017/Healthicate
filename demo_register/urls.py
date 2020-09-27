@@ -30,7 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^index/', views.index, name = 'index'),
     #url(r'^fullcalendar/', views.fullcalendar, name = 'fullcalendar'),
-    url(r'^$', TemplateView.as_view(template_name="homepage.html"),),
+    url(r'^$', views.index, name = 'index'),
     url(r'^schedule/', include('schedule.urls')),
     url(r'^fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
     url(r'^admin/', admin.site.urls),

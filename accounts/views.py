@@ -38,6 +38,8 @@ class employee_register(CreateView):
 
 
 def login_request(request):
+    if request.user.is_authenticated:
+        return render(request, '../templates/doctor.html')
     if request.method=='POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
@@ -48,15 +50,17 @@ def login_request(request):
                 login(request,user)
                 return render(request, '../templates/doctor.html')
             else:
+                form = AuthenticationForm(request.POST)
                 messages.error(request,"Invalid username or password")
+                return render(request, '../templates/login.html', {'form': form})
         else:
-                messages.error(request,"Invalid username or password")
-    return render(request, '../templates/login.html',
-    context={'form':AuthenticationForm()})
+            messages.error(request,"Invalid username or password")
+            form=AuthenticationForm()
+            return render(request, '../templates/login.html', {'form': form})
 
 def logout_view(request):
     logout(request)
-    return redirect('/')
+    return render(request, '../templates/index.html')
 
 # def all_rooms(request):
 #     rooms = Room.objects.all()
