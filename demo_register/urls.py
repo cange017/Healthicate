@@ -15,13 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.conf.urls import url
+from django.conf.urls import include, url
 from accounts import views
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
+from django.conf import settings
+
+
+admin.autodiscover()
 
 urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', include('pages.urls')),
     path('admin/', admin.site.urls),
     url(r'^index/', views.index, name = 'index'),
+    #url(r'^fullcalendar/', views.fullcalendar, name = 'fullcalendar'),
+    url(r'^$', TemplateView.as_view(template_name="homepage.html"),),
+    url(r'^schedule/', include('schedule.urls')),
+    url(r'^fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
+    url(r'^admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
