@@ -76,12 +76,13 @@
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
+          <p style="margin-top: 1%; font-size: 1.4em;">Hi
+            {% if user.is_authenticated %}
+              {{user.first_name}}
+              {{user.last_name}}
+            {% endif %}!
+          </p>
+        
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -141,23 +142,20 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+          <!-- Content Row -->
+          <div class="row">
+            <div class="container d-flex h-100 align-items-center">
+              <div style="margin-top: 15%" class="mx-auto text-center">
+            <h3 >Choose the time you are willing to meet up with a doctor over video!</h3>
+            </div>
+            </div>
+        </div>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <a href="{% url 'fullcalendar' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Set Schedule</a>
+            <a id="set-schedule" href="{% url 'fullcalendar' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Set Schedule</a>
+            
           </div>
 
-          <!-- Content Row -->
-          <div class="row">
-
-          </div>
-
-          <!-- Content Row -->
-
-          <div class="row">
-
-          
-          </div>
 
           <!-- Content Row -->
           <div class="row">
