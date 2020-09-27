@@ -1,4 +1,4 @@
-from django.contrib.auth import login, logout,authenticate
+from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.views.generic import CreateView
@@ -15,6 +15,7 @@ def index(request):
 
 def register(request):
     return render(request, '../templates/register.html')
+
     
 class customer_register(CreateView):
     model = User
@@ -38,25 +39,31 @@ class employee_register(CreateView):
 
 
 def login_request(request):
+
     if request.user.is_authenticated:
-        return render(request, '../templates/doctor.html')
-    if request.method=='POST':
+        return render(request, '../templates/doctor.html') 
+
+    if request.method == 'POST':
+
         form = AuthenticationForm(data=request.POST)
+
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
+
             if user is not None :
+                # Correct username and password
                 login(request,user)
                 return render(request, '../templates/doctor.html')
+            
             else:
                 form = AuthenticationForm(request.POST)
                 messages.error(request,"Invalid username or password")
-                return render(request, '../templates/login.html', {'form': form})
-        else:
-            messages.error(request,"Invalid username or password")
-            form=AuthenticationForm()
-            return render(request, '../templates/login.html', {'form': form})
+                return render(request, '../templates/login.html', {'form': AuthenticationForm()})
+    
+    
+    return render(request, '../templates/login.html', context={'form':AuthenticationForm()})
 
 def logout_view(request):
     logout(request)
