@@ -33,7 +33,10 @@ urlpatterns = [
     url(r'^$', views.index, name = 'index'),
     url(r'^schedule/', include('schedule.urls')),
     url(r'^fullcalendar/', TemplateView.as_view(template_name="fullcalendar.html"), name='fullcalendar'),
+    url(r'^mymeetings/', TemplateView.as_view(template_name="mymeetings.html"), name='mymeetings'),
+    url(r'^doctor/', TemplateView.as_view(template_name="doctor.html"), name='doctor'),
     url(r'^admin/', admin.site.urls),
+    
 ]
 
 if settings.DEBUG:
