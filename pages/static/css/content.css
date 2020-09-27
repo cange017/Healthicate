@@ -139,6 +139,10 @@ dl.faq button {
     overflow: hidden;
   }
 
+::after {
+      display: none;
+  }
+
   a#set-schedule {
       width: 20%;
       margin-top: 5%;
