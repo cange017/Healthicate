@@ -139,6 +139,15 @@ dl.faq button {
     overflow: hidden;
   }
 
+  a#set-schedule {
+      width: 20%;
+      margin-top: 5%;
+      padding: 3%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
   .accordion:after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
