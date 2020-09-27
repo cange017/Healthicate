@@ -4,7 +4,7 @@
 To run the project:
 1. Clone the repository
 ```bash
-git clone https://github.com/nusrat-borsha/Django-custom-registration.git
+git clone https://github.com/cange017/Healthicate.git
 ```
 2. Install the requirements
 ```bash
