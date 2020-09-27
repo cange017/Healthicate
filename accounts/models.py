@@ -17,5 +17,15 @@ class Employee(models.Model):
     phone_number = models.CharField(max_length=20)
     designation = models.CharField(max_length=20)
 
+'''
+class Room(models.Model):
+    """Represents chat rooms that users can join"""
+    name = models.CharField(max_length=30)
+    slug = models.CharField(max_length=50)
+
+    def __str__(self):
+        """Returns human-readable representation of the model instance."""
+        return self.name
+'''
 
 

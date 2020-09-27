@@ -5,6 +5,7 @@ from django.views.generic import CreateView
 from .form import CustomerSignUpForm, EmployeeSignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from .models import User
+# from .models import Room
 
 def index(request):
     return render(request, '../templates/index.html')
@@ -53,3 +54,12 @@ def login_request(request):
 def logout_view(request):
     logout(request)
     return redirect('/')
+
+# def all_rooms(request):
+#     rooms = Room.objects.all()
+#     return render(request, 'chat/index.html', {'rooms': rooms})
+
+
+# def room_detail(request, slug):
+#     room = Room.objects.get(slug=slug)
+#     return render(request, 'chat/room_detail.html', {'room': room})
