@@ -78,7 +78,8 @@
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
           <p>Hi
             {% if user.is_authenticated %}
-              {{user.username}}
+              {{user.first_name}}
+              {{user.last_name}}
             {% endif %}!
           </p>
           
