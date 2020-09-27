@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+""" from twilio.rest import Client
+from twilio.jwt.access_token import AccessToken
+from twilio.jwt.access_token.grants import VideoGrant
+from accounts.models import Room """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -56,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'demo_register.urls'
@@ -145,6 +150,31 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+############# TWILIO part ##################
+
+'''
+ACCOUNT_SID = "AC1ca7cb9217ead5d9ed374fecd657e10c"
+API_SECRET = "rSm7laBz8WK35JkHIZuNc8ZHDNJ2b3O7"
+API_KEY = "SK43ff01ace6eca0029462814bf66a8508"
+ACCESS_TOKEN = "f09b7cf113b0a8c266316938471cf27a"
+
+# Create a Video grant and add to token
+video_grant = VideoGrant(room='cool room')
+ACCESS_TOKEN.add_grant(video_grant)
+
+# Return token info as JSON
+print(ACCESS_TOKEN.to_jwt())
+
+client = Client(ACCOUNT_SID, ACCESS_TOKEN)
+
+room = client.video.rooms.create(
+                            enable_turn=True,
+                            type='peer-to-peer',
+                            unique_name="hellos"
+                        )
+
+print(room.sid)
+'''
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     './assets',
