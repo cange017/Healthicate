@@ -6,6 +6,9 @@ from .form import CustomerSignUpForm, EmployeeSignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from .models import User
 
+#def fullcalendar(request):
+#    return render(request, '../templates/fullcalendar.html')
+
 def index(request):
     return render(request, '../templates/index.html')
 
