@@ -170,6 +170,10 @@ previous button's border...
   border-style: solid;
   border-width: 1px; }
 
+h3#demo {
+    display: none;
+}
+
 hr.fc-divider {
   height: 0;
   margin: 0;
